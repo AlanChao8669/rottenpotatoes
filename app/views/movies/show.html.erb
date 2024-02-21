@@ -1,0 +1,12 @@
+<p style="color: green"><%= notice %></p>
+<h1 class="page-title">Movie details</h1>
+
+<%= render @movie %>
+
+<div class="actions">
+  <%= link_to "Edit this movie", edit_movie_path(@movie), class: "btn btn-primary" %> |
+  <%= link_to "Back to movies", movies_path(sort_by: session[:sort_by], order: session[:order]), class: "btn btn-secondary" %>
+</div>
+<div class="actions">
+  <%= button_to "Destroy this movie", @movie, method: :delete, class: "btn btn-danger" %>
+</div>

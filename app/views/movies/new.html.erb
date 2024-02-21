@@ -1,0 +1,9 @@
+<h1 class="page-title">New movie</h1>
+
+<%= render "form", movie: @movie %>
+
+<br>
+
+<div class="actions">
+  <%= link_to "Back to movies", movies_path(sort_by: session[:sort_by], order: session[:order]), class: "btn btn-secondary" %>
+</div>

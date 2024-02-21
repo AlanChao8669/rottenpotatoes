@@ -1,0 +1,39 @@
+<p style="color: green"><%= notice %></p>
+
+<h1 class="page-title">Movies</h1>
+
+<%= form_tag(movies_path, method: :get) do %>
+  Sort by:
+  <%= select_tag :sort_by, options_for_select([['Title', 'title'], ['Rating', 'rating'], ['Release Date', 'release_date']], selected: session[:sort_by]), onchange: 'this.form.submit();' %>
+  Order:
+  <%= select_tag :order, options_for_select([['Ascending', 'asc'], ['Descending', 'desc']], selected: session[:order]), onchange: 'this.form.submit();' %>
+<% end %>
+<br>
+<div id="movies">
+<table class="movies-table">
+  <thead>
+    <tr>
+      <%= sortable_column 'title' %>
+      <%= sortable_column 'rating' %>
+      <%= sortable_column 'release_date', 'Release Date' %>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @movies.each do |movie| %>
+    <tr>
+      <td><%= movie.title %></td>
+      <td><%= movie.rating %></td>
+      <td><%= movie.release_date %></td>
+      <td><%= link_to 'Show', movie_path(movie), class: "actions btn" %></td>
+      <td><%= link_to 'Edit', edit_movie_path(movie), class: "actions btn" %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+</div>
+<br>
+<div class="actions">
+  <%= link_to "New movie", new_movie_path, class: "btn btn-primary" %>
+</div>
+

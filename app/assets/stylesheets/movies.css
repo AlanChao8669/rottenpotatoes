@@ -1,0 +1,47 @@
+.asc-highlight {
+    background-color: lightblue;
+}
+  
+.desc-highlight {
+    background-color: lightyellow;
+}
+
+.actions .btn {
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.btn-primary {
+    background-color: rgb(11, 140, 221);
+    color: white;
+}
+
+.btn-secondary {
+    background-color: rgb(139, 163, 199);
+    color: white;
+}
+
+.btn-danger {
+    background-color: rgb(165, 49, 49);
+    color: white;
+}
+
+.page-title {
+    color: navy;
+    margin-bottom: 20px;
+}
+.movies-table {
+    border-collapse: collapse;
+}
+
+.movies-table th, .movies-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+form {
+    max-width: 500px;
+}
